@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.ztech.fakecallm7.SelectContactFragment">
+    <ImageButton
+            android:background="@drawable/img_no_image"
+            android:contentDescription="@string/contact_icon"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:elevation="4dp"
+            android:layout_marginTop="3dp"
+            android:scaleType="fitXY"
+            android:layout_marginStart="3dp"
+            android:id="@+id/selectContactButton"/>
+
+    <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/selectContactButton"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:id="@+id/numberInput"
+            android:hint="@string/number"
+            android:layout_gravity="top"
+            android:layout_below="@+id/nameInput"
+            android:layout_toEndOf="@+id/selectContactButton"/>
+
+</RelativeLayout>

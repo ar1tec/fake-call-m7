@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                tools:context="com.ztech.fakecallm7.ScheduleCallActivity"
+                android:layout_height="match_parent">
+
+    <fragment
+            android:id="@+id/selectContactCallFragment"
+            android:layout_width="match_parent"
+            class="com.ztech.fakecallm7.SelectContactFragment"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_select_contact">
+    </fragment>
+
+    <RadioGroup android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/callTypeRadioGroup"
+                android:layout_marginTop="137dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/incoming"
+                android:id="@+id/incomingRadioButton"
+                android:checked="true"
+                android:layout_margin="@dimen/layout_margin"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/outgoing"
+                android:id="@+id/outgoingRadioButton"
+                android:checked="false"
+                android:layout_margin="@dimen/layout_margin"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/missed"
+                android:id="@+id/missedRadioButton"
+                android:checked="false"
+                android:layout_margin="@dimen/layout_margin"/>
+    </RadioGroup>
+
+    <fragment
+            android:layout_below="@+id/callTypeRadioGroup"
+            android:id="@+id/callScheduleTimePicker"
+            android:layout_width="match_parent"
+            tools:layout="@layout/fragment_select_time"
+            class="com.ztech.fakecallm7.SelectTimeFragment"
+            android:layout_height="wrap_content">
+    </fragment>
+
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/callDurationInput"
+            android:hint="@string/duration"
+            android:layout_marginLeft="@dimen/layout_margin"
+            android:layout_marginRight="@dimen/layout_margin"
+            android:layout_below="@id/callScheduleTimePicker"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"/>
+
+    <EditText
+            android:id="@+id/hangUpAfterInput"
+            android:layout_below="@+id/callDurationInput"
+            android:hint="@string/hang_up_after"
+            android:inputType="number"
+            android:layout_marginLeft="@dimen/layout_margin"
+            android:layout_marginRight="@dimen/layout_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <EditText
+            android:id="@+id/voiceFileInput"
+            android:layout_below="@id/hangUpAfterInput"
+            android:hint="@string/voice"
+            android:focusable="false"
+            android:layout_marginStart="@dimen/layout_margin"
+            android:layout_marginEnd="@dimen/layout_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/schedule"
+            android:id="@+id/setCallScheduleButton"
+            android:layout_margin="@dimen/layout_margin"
+            android:onClick="onClickSchedule"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"/>
+
+
+</RelativeLayout>
