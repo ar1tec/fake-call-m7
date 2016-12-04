@@ -64,7 +64,7 @@
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"/>

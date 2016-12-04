@@ -52,6 +52,16 @@
                   android:excludeFromRecents="true"
                   android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".ScheduleSMSActivity"
+                  android:excludeFromRecents="true"
+                  android:screenOrientation="portrait">
+        </activity>
+
+        <receiver
+                android:name=".FakeSMSReceiver"
+                android:enabled="true">
+        </receiver>
+
     </application>
 
 </manifest>

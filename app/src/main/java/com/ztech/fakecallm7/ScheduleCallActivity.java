@@ -110,6 +110,14 @@ public class ScheduleCallActivity extends AppCompatActivity implements SelectTim
 
                 return true;
 
+            case R.id.smsOption:
+
+                intent = new Intent(this, ScheduleSMSActivity.class);
+
+                startActivity(intent);
+
+                return true;
+
             default:
                 return super.onOptionsItemSelected(menuItem);
         }

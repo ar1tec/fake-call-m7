@@ -24,4 +24,7 @@
     <string name="unknown">Unknown</string>
     <string name="missed_call">Missed Call</string>
     <string name="max">Contact photo takes maximum space</string>
+    <string name="draft">Draft</string>
+    <string name="message">Message&#8230;</string>
+    <string name="sms">SMS</string>
 </resources>
