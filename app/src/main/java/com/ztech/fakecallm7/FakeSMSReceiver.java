@@ -2,6 +2,7 @@ package com.ztech.fakecallm7;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -30,6 +31,14 @@ public class FakeSMSReceiver extends BroadcastReceiver {
         String number = intent.getStringExtra("number");
 
         String message = intent.getStringExtra("message");
+
+        Intent showSMS = new Intent(Intent.ACTION_MAIN);
+
+        showSMS.addCategory(Intent.CATEGORY_DEFAULT);
+
+        showSMS.setType("vnd.android-dir/mms-sms");
+
+        PendingIntent showSMSIntent = PendingIntent.getActivity(context, 0, showSMS, PendingIntent.FLAG_CANCEL_CURRENT);
 
         if (contactImage != null && !contactImage.equals("")) {
 
@@ -69,6 +78,8 @@ public class FakeSMSReceiver extends BroadcastReceiver {
         nBuilder.setContentText(message);
 
         nBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        nBuilder.setContentIntent(showSMSIntent);
 
         nm.notify(2001, nBuilder.build());
 

@@ -206,6 +206,16 @@ public class ScheduleCallActivity extends AppCompatActivity implements SelectTim
 
             PendingIntent pendingIntent = PendingIntent.getActivity(this, fakeCallID, intent, PendingIntent.FLAG_ONE_SHOT);
 
+            if (System.currentTimeMillis() > calendar.getTimeInMillis()) {
+
+                CallLogUtilities.addCallToLog(contentResolver, number, Integer.parseInt(duration), CallLog.Calls.INCOMING_TYPE, calendar.getTimeInMillis());
+
+                Toast.makeText(this, "Fake incoming call added to log", Toast.LENGTH_SHORT).show();
+
+                return;
+
+            }
+
             AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
